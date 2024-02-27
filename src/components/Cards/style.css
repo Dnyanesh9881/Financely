@@ -1,0 +1,24 @@
+.cards-row{
+ display: flex;   
+ justify-content: space-between;
+ text-align: center;
+ gap: 1rem;
+ flex-wrap: wrap;
+ margin: 2rem !important;
+ 
+}
+.my-card{
+    flex: 1;
+    min-width: 400px;
+    box-shadow: var(--shadow);
+    border-radius: 0.5rem;
+}
+.my-card p,.my-card h2{
+  text-align: start;
+}
+.my-card p{
+    margin-top: 0.7rem;
+}
+hr{
+    border: 1px solid rgb(233, 231, 231);
+}
