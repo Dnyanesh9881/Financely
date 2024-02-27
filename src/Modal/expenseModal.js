@@ -59,9 +59,9 @@ function ExpenseModal({isExpenseModelVisible, handelExpenseCancel, onFinish}) {
          ]}
         >
            <Select className='select-input'>
-            <Select.Option values="salary">Salary</Select.Option>
-            <Select.Option values="freelance">Freelance</Select.Option>
-            <Select.Option values="investment">Investment</Select.Option>
+            <Select.Option value="salary">Salary</Select.Option>
+            <Select.Option value="freelance">Freelance</Select.Option>
+            <Select.Option value="investment">Investment</Select.Option>
            </Select>
         </Form.Item>
         <Button type='primary' htmlType='submit'>Add Expense</Button>
