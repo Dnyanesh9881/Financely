@@ -32,6 +32,9 @@ function Dashboard() {
   const handelIncomeCancel = () => {
     setIsIncomeModelVisible(false);
   };
+  let sortedTransactions=transactions.sort((a,b)=>{
+    return new Date(a.date)-new Date(b.date);
+  })
   const onFinish = (values, type) => {
     // console.log("onFinish Fn:", type, values);
     const newTransaction = {
@@ -100,9 +103,7 @@ function Dashboard() {
     setIncome(totalIncome);
     setTotalBalance(totalIncome - totalExpense);
   }
-  let sortedTransactions=transactions.sort((a,b)=>{
-    return new Date(a.date)-new Date(b.date);
-  })
+  
   return (
     <div>
       <Header />
@@ -130,7 +131,7 @@ function Dashboard() {
         </>
       )}
       {
-        transactions.length!==0?<Chart sortedTransactions={sortedTransactions} />: <NoTransactions/>
+        transactions.length!==0 && sortedTransactions.length!==0?<Chart sortedTransactions={sortedTransactions} />: <NoTransactions/>
       }
       <TransactionsTable
         transactions={transactions}

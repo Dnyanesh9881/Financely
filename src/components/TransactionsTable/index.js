@@ -114,9 +114,9 @@ function TransactionsTable({ transactions, addTransaction, fetchTransactions }) 
           placeholder="Filter"
           allowClear
         >
-          <Option value="">All</Option>
-          <Option value="Income">Income</Option>
-          <Option value="Expense">Expense</Option>
+          <Select.Option value="">All</Select.Option>
+          <Select.Option value="Income">Income</Select.Option>
+          <Select.Option value="Expense">Expense</Select.Option>
         </Select>
       </div>
       <div className="sort-and-csv">
@@ -132,7 +132,7 @@ function TransactionsTable({ transactions, addTransaction, fetchTransactions }) 
         </Radio.Group>
         <div className="all-csv">
           <button className="btn" onClick={exportCSV}>Export to CSV</button>
-          <label for="file-csv" className="btn btn-blue" style={{fontSize:"16px"}}>
+          <label htmlFor="file-csv" className="btn btn-blue" style={{fontSize:"16px"}}>
             Import from CSV
           </label>
           <input
