@@ -1,0 +1,42 @@
+.input-named-transactions{
+    flex:3;
+    box-shadow: var(--shadow);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 0.5rem;
+   overflow: hidden;
+   padding-left: 0.6rem;
+}
+.input-and-select{
+    display: flex;
+   margin: 1rem;
+   align-items: center;
+   justify-content: center;
+   gap: 1rem;
+}
+.named-input{
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 0.5rem;
+}
+.select-input{
+    flex: 1;
+    box-shadow: var(--shadow);
+}
+.sort-and-csv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+}
+.table{
+    margin: 1rem;
+}
+.all-csv{
+    display: flex;
+    align-items: center ;
+    gap: 1.5rem;
+    width: 350px;
+}

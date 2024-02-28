@@ -5,6 +5,9 @@
   background-color: var(--theme);
   color: var(--white);
   padding: 0.7rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 p {
   margin: 0;

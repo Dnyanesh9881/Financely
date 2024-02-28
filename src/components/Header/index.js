@@ -34,9 +34,13 @@ function Header() {
     <div className="navbar">
       <p className="logo">Financely</p>
       {user && (
-        <p className="logout link" onClick={logoutFn}>
+        <div style={{display:"flex", alignItems:"center", gap:"1rem"}}>
+          <img src={user.photoURL ? user.photoURL : ""} style={{height:"2rem", width:"2rem", borderRadius:"50%"}}/>
+          <p className="logout link" onClick={logoutFn}>
           Logout
         </p>
+        </div>
+        
       )}
     </div>
   );

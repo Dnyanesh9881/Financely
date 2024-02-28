@@ -16,6 +16,7 @@
 .btn-blue {
   color: white;
   background-color: var(--theme);
+  /* font-size: 0.5rem; */
 }
 .btn:hover {
   background-color: var(--theme);

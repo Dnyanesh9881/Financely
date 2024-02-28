@@ -21,6 +21,7 @@ function SignupSignin() {
   const [loading, setLoading] = useState(false);
   const [loginForm, setLoginForm] = useState(false);
   const naviagate = useNavigate();
+  
 
   function signupWithEmail(e) {
     //  console.log("signupWithEmail");
@@ -131,7 +132,7 @@ function SignupSignin() {
     if (!user) return;
     setLoading(true);
 
-    const userRef = doc(db, "users", user.uid);
+    const userRef = doc(db, "user", user.uid);
     const userData = await getDoc(userRef);
     if (!userData.exists()) {
       try {
@@ -154,6 +155,7 @@ function SignupSignin() {
 
     }
   }
+  
   return (
     <>
       {loginForm ? (
