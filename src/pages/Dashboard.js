@@ -8,6 +8,8 @@ import { addDoc, collection, getDoc, getDocs, query } from "firebase/firestore";
 import { auth, db } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import TransactionsTable from "../components/TransactionsTable";
+import Chart from "../components/Chart";
+import NoTransactions from "../components/NoTransactions";
 
 function Dashboard() {
   const [isExpenseModelVisible, setIsExpenseModelVisible] = useState(false);
@@ -42,7 +44,7 @@ function Dashboard() {
     addTransaction(newTransaction);
   };
 
-  async function addTransaction(transaction) {
+  async function addTransaction(transaction, many) {
     try {
       const docRef = await addDoc(
         collection(db, `user/${user.uid}/transactions`),
@@ -50,14 +52,14 @@ function Dashboard() {
       );
 
       console.log("doc written with id: ", docRef.id);
-      toast.success("Transaction Added");
+      if(!many)toast.success("Transaction Added");
       let newArray = transactions;
       newArray.push(transaction);
       setTransactions(newArray);
       calculateBalance();
     } catch (e) {
       console.log("Error Adding Document", e);
-      toast.error("Couldn't Add Transaction");
+      if(!many)  toast.error("Couldn't Add Transaction");
     }
   }
 
@@ -98,6 +100,9 @@ function Dashboard() {
     setIncome(totalIncome);
     setTotalBalance(totalIncome - totalExpense);
   }
+  let sortedTransactions=transactions.sort((a,b)=>{
+    return new Date(a.date)-new Date(b.date);
+  })
   return (
     <div>
       <Header />
@@ -124,6 +129,9 @@ function Dashboard() {
           />
         </>
       )}
+      {
+        transactions.length!==0?<Chart sortedTransactions={sortedTransactions} />: <NoTransactions/>
+      }
       <TransactionsTable
         transactions={transactions}
         addTransaction={addTransaction}
