@@ -1,0 +1,26 @@
+.chart-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    /* min-width: 100vw; */
+
+}
+.line-chart{
+    flex: 3;
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.line-chart h2, .pie-chart h2{
+    margin-bottom: 1rem;
+}
+.pie-chart{
+    flex: 1;
+    box-shadow: var(--shadow);
+    border-radius: 1rem;
+    padding: 1rem;
+
+}

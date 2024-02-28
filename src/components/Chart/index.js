@@ -1,5 +1,6 @@
 import React from 'react';
 import { Line } from '@ant-design/charts';
+import "./style.css";
 
 function Chart({sortedTransactions}) {
 
@@ -12,8 +13,14 @@ function Chart({sortedTransactions}) {
         yField: 'amount',
       };
   return (
-    <div>
+    <div className='chart-wrapper'>
+        <div className='line-chart'>
+            <h2>Your Analytics</h2>
         <Line  {...config}/>
+        </div>
+        <div className='pie-chart'>
+            <h2>Your spending</h2>
+        </div>
     </div>
   )
 }
