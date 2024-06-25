@@ -32,7 +32,7 @@ function Header() {
   }
   return (
     <div className="navbar">
-      <p className="logo">Financely</p>
+      <p className="logo">Money_Minder</p>
       {user && (
         <div style={{display:"flex", alignItems:"center", gap:"1rem"}}>
           <img src={user.photoURL ? user.photoURL : ""} style={{height:"2rem", width:"2rem", borderRadius:"50%"}}/>
